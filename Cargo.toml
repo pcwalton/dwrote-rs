@@ -12,6 +12,6 @@ name = "dwrote"
 [dependencies]
 libc = "0.2"
 lazy_static = "1"
-winapi = { version = "0.3", features = ["dwrite", "winnt", "unknwnbase", "libloaderapi", "winnls"] }
+winapi = { version = "0.3", features = ["dwrite", "dwrite_1", "winnt", "unknwnbase", "libloaderapi", "winnls"] }
 serde = "1.0"
 serde_derive = "1.0"
