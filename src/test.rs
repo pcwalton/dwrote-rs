@@ -46,6 +46,24 @@ fn test_get_font_file_bytes() {
 }
 
 #[test]
+fn test_font_file_is_monospace() {
+    let system_fc = FontCollection::system();
+
+    let arial_family = system_fc.get_font_family_by_name("Arial").unwrap();
+    let arial_font = arial_family.get_first_matching_font(FontWeight::Regular,
+                                                          FontStretch::Normal,
+                                                          FontStyle::Normal);
+    assert!(arial_font.is_monospace() == Some(false));
+
+    let courier_new_family = system_fc.get_font_family_by_name("Courier New").unwrap();
+    let courier_new_font = courier_new_family.get_first_matching_font(FontWeight::Regular,
+                                                          FontStretch::Normal,
+                                                          FontStyle::Normal);
+    assert!(courier_new_font.is_monospace() == Some(true));
+}
+
+
+#[test]
 fn test_create_font_file_from_bytes() {
     let system_fc = FontCollection::system();
 
